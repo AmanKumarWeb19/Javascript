@@ -10,16 +10,29 @@
     <button
       class="bag"
       onclick="
-      cartQuantity=cartQuantity+1;
+      cartQuantity++;
       document.querySelector('#cart-summary').
       innerText = `Your Bag has ${cartQuantity} Items`;"
     >
       Add to Bag
     </button>
-    <button class="wish" onclick="alert('Add to WishList')">
+    <button
+      class="wish"
+      onclick="
+    cartQuantity--;
+    document.querySelector('#cart-summary').
+    innerText = `Your Bag has ${cartQuantity} Items`;"
+    >
       Move to Wishlist
     </button>
-    <button class="bag" onclick="alert('Add to Bag')">Add 1+1 Sale Item</button>
+    <button
+      class="bag"
+      onclick="cartQuantity += 2;
+    document.querySelector('#cart-summary').
+    innerText = `Your Bag has ${cartQuantity} Items`"
+    >
+      Add 1+1 Sale Item
+    </button>
 
     <h1 id="cart-summary"></h1>
 
