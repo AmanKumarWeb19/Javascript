@@ -13,18 +13,8 @@
 
     <button
       onclick="
-    // This will generate the random between 0 and 3.
-    let randomNumber= Math.random()*3
-    let ComputerChoice;
-
-    if(randomNumber>0 && randomNumber<=1){
-      ComputerChoice='Bat'
-    }else if(randomNumber>1 && randomNumber<=2){
-      ComputerChoice='Ball'
-    }else{
-      ComputerChoice='Stump'
-    }
-
+      generateComputerChoice()
+   
     let resultMsg;
     if(ComputerChoice === 'Ball'){
       resultMsg = 'User Has Won'
@@ -42,28 +32,17 @@
 
     <button
       onclick="
-    // This will generate the random between 0 and 3.
-    randomNumber= Math.random()*3
-    let ComputerChoices;
+      generateComputerChoice()
 
-    if(randomNumber>0 && randomNumber<=1){
-      ComputerChoices='Bat'
-    }else if(randomNumber>1 && randomNumber<=2){
-      ComputerChoices='Ball'
-    }else{
-      ComputerChoices='Stump'
-    }
+      if(ComputerChoice === 'Ball'){
+        resultMsg = `It's a Tie`
+      }else if(ComputerChoice === 'Bat'){
+        resultMsg = 'Computer Has Won'
+      }else if(ComputerChoice === 'Stump'){
+        resultMsg = 'User Has Won'
+      }
 
-    let resultMsgs;
-    if(ComputerChoices === 'Ball'){
-      resultMsgs = `It's a Tie`
-    }else if(ComputerChoices === 'Bat'){
-      resultMsgs = 'Computer Has Won'
-    }else if(ComputerChoices === 'Stump'){
-      resultMsgs = 'User Has Won'
-    }
-
-    alert(`You have Chosen Ball. Computer Choice is ${ComputerChoices} and ${resultMsgs}`)
+    alert(`You have Chosen Ball. Computer Choice is ${ComputerChoice} and ${resultMsg}`)
     "
     >
       Ball
@@ -71,31 +50,35 @@
 
     <button
       onclick="
-    // This will generate the random between 0 and 3.
-    randomNumber= Math.random()*3
-    let ComputerChoicess;
+    
 
-    if(randomNumber>0 && randomNumber<=1){
-      ComputerChoicess='Bat'
-    }else if(randomNumber>1 && randomNumber<=2){
-      ComputerChoicess='Ball'
-    }else{
-      ComputerChoicess='Stump'
+    if(ComputerChoice === 'Ball'){
+      resultMsg = 'Computer Has Won'
+    }else if(ComputerChoice === 'Bat'){
+      resultMsg= 'User Has Won'
+    }else if(ComputerChoice === 'Stump'){
+      resultMsg = `It's a Tie`
     }
 
-    let resultMsgss;
-    if(ComputerChoicess === 'Ball'){
-      resultMsgss = 'Computer Has Won'
-    }else if(ComputerChoicess === 'Bat'){
-      resultMsgss = 'User Has Won'
-    }else if(ComputerChoicess === 'Stump'){
-      resultMsgss = `It's a Tie`
-    }
-
-    alert(`You have Chosen Stump. Computer Choice is ${ComputerChoicess} and ${resultMsgss}`)
+    alert(`You have Chosen Stump. Computer Choice is ${ComputerChoice} and ${resultMsg}`)
     "
     >
       Stump
     </button>
+
+    <script>
+      let ComputerChoice;
+      function generateComputerChoice() {
+        // This will generate the random between 0 and 3.
+        let randomNumber = Math.random() * 3;
+        if (randomNumber > 0 && randomNumber <= 1) {
+          ComputerChoice = "Bat";
+        } else if (randomNumber > 1 && randomNumber <= 2) {
+          ComputerChoice = "Ball";
+        } else {
+          ComputerChoice = "Stump";
+        }
+      }
+    </script>
   </body>
 </html>
