@@ -14,18 +14,8 @@
     <button
       onclick="
     let ComputerChoice=generateComputerChoice()
-   
-    let resultMsg;
-    if(ComputerChoice === 'Ball'){
-      resultMsg = 'User Has Won'
-    }else if(ComputerChoice === 'Bat'){
-      resultMsg = `It's a Tie`
-    }else if(ComputerChoice === 'Stump'){
-      resultMsg = 'Computer Has Won'
-    }
-
-    alert(`You have Chosen Bat. Computer Choice is ${ComputerChoice} and ${resultMsg}`)
-    "
+    let resultMsg=getResults('Bat',ComputerChoice)
+    showResults('Bats',ComputerChoice,resultMsg)"
     >
       Bat
     </button>
@@ -33,17 +23,8 @@
     <button
       onclick="
        ComputerChoice=generateComputerChoice()
-
-      if(ComputerChoice === 'Ball'){
-        resultMsg = `It's a Tie`
-      }else if(ComputerChoice === 'Bat'){
-        resultMsg = 'Computer Has Won'
-      }else if(ComputerChoice === 'Stump'){
-        resultMsg = 'User Has Won'
-      }
-
-    alert(`You have Chosen Ball. Computer Choice is ${ComputerChoice} and ${resultMsg}`)
-    "
+       resultMsg=getResults('Ball',ComputerChoice)
+     showResults('Ball',ComputerChoice,resultMsg)"
     >
       Ball
     </button>
@@ -51,17 +32,8 @@
     <button
       onclick="
      ComputerChoice=generateComputerChoice()
-
-    if(ComputerChoice === 'Ball'){
-      resultMsg = 'Computer Has Won'
-    }else if(ComputerChoice === 'Bat'){
-      resultMsg= 'User Has Won'
-    }else if(ComputerChoice === 'Stump'){
-      resultMsg = `It's a Tie`
-    }
-
-    alert(`You have Chosen Stump. Computer Choice is ${ComputerChoice} and ${resultMsg}`)
-    "
+     resultMsg=getResults('Stump',ComputerChoice)
+     showResults('Stump',ComputerChoice,resultMsg)"
     >
       Stump
     </button>
@@ -78,6 +50,40 @@
         } else {
           return "Stump";
         }
+      }
+
+      function getResults(userMove, computerMove) {
+        if (userMove === "Bat") {
+          if (computerMove === "Ball") {
+            return "User Won";
+          } else if (computerMove === "Bat") {
+            return `It's a Tie`;
+          } else if (computerMove === "stump") {
+            return "Computer has Won";
+          }
+        } else if (userMove === "Ball") {
+          if (computerMove === "Ball") {
+            return `It's a Tie`;
+          } else if (computerMove === "Bat") {
+            return "Computer has Won";
+          } else if (computerMove === "stump") {
+            return "User Won";
+          }
+        } else {
+          if (computerMove === "stump") {
+            return "Computer has Won";
+          } else if (computerMove === "Bat") {
+            return "User Won";
+          } else if (computerMove === "stump") {
+            return `It's a Tie`;
+          }
+        }
+      }
+
+      function showResults(userMove, computerMove, results) {
+        alert(
+          `You have Chosen ${userMove}. Computer Choice is ${computerMove} and ${results}`
+        );
       }
     </script>
   </body>
