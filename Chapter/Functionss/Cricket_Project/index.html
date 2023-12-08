@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cricket Game</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bat Ball Stump Game</h1>
+
+    <button
+      onclick="
+    // This will generate the random between 0 and 3.
+    let randomNumber= Math.random()*3
+    let ComputerChoice;
+
+    if(randomNumber>0 && randomNumber<=1){
+      ComputerChoice='Bat'
+    }else if(randomNumber>1 && randomNumber<=2){
+      ComputerChoice='Ball'
+    }else{
+      ComputerChoice='Stump'
+    }
+
+    let resultMsg;
+    if(ComputerChoice === 'Ball'){
+      resultMsg = 'User Has Won'
+    }else if(ComputerChoice === 'Bat'){
+      resultMsg = `It's a Tie`
+    }else if(ComputerChoice === 'Stump'){
+      resultMsg = 'Computer Has Won'
+    }
+
+    alert(`You have Chosen Bat. Computer Choice is ${ComputerChoice} and ${resultMsg}`)
+    "
+    >
+      Bat
+    </button>
+
+    <button
+      onclick="
+    // This will generate the random between 0 and 3.
+    randomNumber= Math.random()*3
+    let ComputerChoices;
+
+    if(randomNumber>0 && randomNumber<=1){
+      ComputerChoices='Bat'
+    }else if(randomNumber>1 && randomNumber<=2){
+      ComputerChoices='Ball'
+    }else{
+      ComputerChoices='Stump'
+    }
+
+    let resultMsgs;
+    if(ComputerChoices === 'Ball'){
+      resultMsgs = `It's a Tie`
+    }else if(ComputerChoices === 'Bat'){
+      resultMsgs = 'Computer Has Won'
+    }else if(ComputerChoices === 'Stump'){
+      resultMsgs = 'User Has Won'
+    }
+
+    alert(`You have Chosen Ball. Computer Choice is ${ComputerChoices} and ${resultMsgs}`)
+    "
+    >
+      Ball
+    </button>
+
+    <button
+      onclick="
+    // This will generate the random between 0 and 3.
+    randomNumber= Math.random()*3
+    let ComputerChoicess;
+
+    if(randomNumber>0 && randomNumber<=1){
+      ComputerChoicess='Bat'
+    }else if(randomNumber>1 && randomNumber<=2){
+      ComputerChoicess='Ball'
+    }else{
+      ComputerChoicess='Stump'
+    }
+
+    let resultMsgss;
+    if(ComputerChoicess === 'Ball'){
+      resultMsgss = 'Computer Has Won'
+    }else if(ComputerChoicess === 'Bat'){
+      resultMsgss = 'User Has Won'
+    }else if(ComputerChoicess === 'Stump'){
+      resultMsgss = `It's a Tie`
+    }
+
+    alert(`You have Chosen Stump. Computer Choice is ${ComputerChoicess} and ${resultMsgss}`)
+    "
+    >
+      Stump
+    </button>
+  </body>
+</html>
