@@ -7,17 +7,38 @@
   </head>
   <body>
     <script>
-      let age = 21;
-      function printAge() {
-        console.log(`your age is ${age}`);
+      // let age = 21;
+      // function printAge() {
+      //   console.log(`your age is ${age}`);
+      // }
+      // printAge();
+
+      // age = 27;
+      // printAge();
+
+      // age = 32;
+      // printAge();
+
+      // function generateRandomMove() {
+      //   let random = Math.random();
+      //   let randomMove = random * 3;
+      //   return randomMove;
+      // }
+      // let x = generateRandomMove();
+      // console.log(x);
+
+      function determineDriver() {
+        let age = 11;
+        let status;
+        if (age > 18) {
+          status = "You can Drive";
+        } else {
+          status = "Use a BiCycle";
+        }
+        return status;
       }
-      printAge();
-
-      age = 27;
-      printAge();
-
-      age = 32;
-      printAge();
+      let x = determineDriver();
+      console.log(x);
     </script>
   </body>
 </html>
