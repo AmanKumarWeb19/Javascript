@@ -8,6 +8,7 @@
   </head>
   <body>
     <div id="calculator">
+      <p>Calculator</p>
       <input type="text" id="display" readonly />
       <div class="btn_container">
         <button
@@ -114,7 +115,14 @@
           /
         </button>
 
-        <button class="button">=</button>
+        <button
+          class="button"
+          onclick="let result=eval(currentDisplay)
+          currentDisplay= result 
+          document.querySelector('#display').value = currentDisplay;"
+        >
+          =
+        </button>
 
         <button
           class="button"
