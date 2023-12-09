@@ -21,15 +21,30 @@
 
       // console.log(product["company"]);
 
+      // let product = {
+      //   company: "Nike",
+      //   price: 800,
+      //   item_name: "Jeans",
+      //   displayPrice: function () {
+      //     console.log(`Price of the product is ${product.price}`);
+      //   },
+      // };
+      // product.displayPrice();
+
+      // .................................AutoBoxing..............................................
+
+      // console.log("hi i am developr".length);
+      // console.log("hi i am developr".toUpperCase());
+      // console.log("HI I AM A DEVELOPER".toLowerCase());
+
       let product = {
         company: "Nike",
         price: 800,
         item_name: "Jeans",
-        displayPrice: function () {
-          console.log(`Price of the product is ${product.price}`);
-        },
       };
-      product.displayPrice();
+      let saman = product.company;
+      let { company,price } = product;
+      console.log(company)
     </script>
   </body>
 </html>
