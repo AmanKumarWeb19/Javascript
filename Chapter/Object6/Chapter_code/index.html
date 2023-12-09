@@ -7,19 +7,29 @@
   </head>
   <body>
     <script>
+      // let product = {
+      //   company: "Nike",
+      //   price: 800,
+      //   item_name: "Jeans",
+      // };
+      // // console.log(product);
+      // // console.log(product.company);
+      // // console.log(product.item_name);
+      // // console.log(product.price);
+      // // product.company = "addi";
+      // // console.log(product);
+
+      // console.log(product["company"]);
+
       let product = {
         company: "Nike",
         price: 800,
         item_name: "Jeans",
+        displayPrice: function () {
+          console.log(`Price of the product is ${product.price}`);
+        },
       };
-      // console.log(product);
-      // console.log(product.company);
-      // console.log(product.item_name);
-      // console.log(product.price);
-      // product.company = "addi";
-      // console.log(product);
-
-      console.log(product["company"]);
+      product.displayPrice();
     </script>
   </body>
 </html>
