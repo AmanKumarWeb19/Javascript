@@ -39,6 +39,12 @@
     </button>
 
     <script>
+      let score = {
+        win: 0,
+        loss: 0,
+        tie: 0,
+      };
+
       function generateComputerChoice() {
         // This will generate the random between 0 and 3.
 
@@ -55,34 +61,49 @@
       function getResults(userMove, computerMove) {
         if (userMove === "Bat") {
           if (computerMove === "Ball") {
+            score.win++;
             return "User Won";
           } else if (computerMove === "Bat") {
+            score.tie++;
             return `It's a Tie`;
           } else if (computerMove === "stump") {
+            score.loss++;
             return "Computer has Won";
           }
         } else if (userMove === "Ball") {
           if (computerMove === "Ball") {
+            score.tie++;
             return `It's a Tie`;
           } else if (computerMove === "Bat") {
+            score.loss++;
             return "Computer has Won";
           } else if (computerMove === "stump") {
+            score.win++;
             return "User Won";
           }
         } else {
-          if (computerMove === "stump") {
+          if (computerMove === "Ball") {
+            score.loss++;
             return "Computer has Won";
           } else if (computerMove === "Bat") {
+            score.win++;
             return "User Won";
           } else if (computerMove === "stump") {
+            score.tie++;
             return `It's a Tie`;
           }
         }
       }
 
       function showResults(userMove, computerMove, results) {
+        // console.log(score);
         alert(
-          `You have Chosen ${userMove}. Computer Choice is ${computerMove} and ${results}`
+          `You have Chosen ${userMove}. Computer Choice is ${computerMove} and 
+          
+          ${results}
+
+          won:${score.win}, loss:${score.loss}, tie:${score.tie}
+          `
         );
       }
     </script>
