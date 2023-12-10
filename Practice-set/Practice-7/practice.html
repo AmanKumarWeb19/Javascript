@@ -7,11 +7,83 @@
   </head>
   <body>
     <script>
-      let myntraProduct = {
+      // let myntraProduct = {
+      //   company: "Myntra",
+      //   Item: "Jeans",
+      //   price: 800,
+      //   "delivery-time": "same day delivery",
+      // };
+
+      // 2. Create an Object with two references and log changes to
+      // one object by changing the other one
+
+      // let copyProduct = myntraProduct;
+      // console.log(myntraProduct);
+      // copyProduct.Item = "Top";
+      // console.log(copyProduct);
+      // copyProduct.price = "1000";
+      // console.log(copyProduct);
+      // console.log(myntraProduct);
+
+      // 3. Use Bracket Notation to display delivery Time
+
+      // console.log(myntraProduct["delivery-time"]);
+
+      // 4. Given an object {message:'good job',status:'complete'},use de-structuring to create two variable mesaage and status.
+
+      // let destructure = {
+      //   messgae: "good job",
+      //   status: "complete",
+      // };
+      // console.log(destructure);
+      // let { messgae, status } = destructure;
+      // console.log(messgae);
+      // console.log(status);
+
+      // 5. Add function isIdenticalProduct to compare two product objects.
+
+      function isIdenticalProduct(prod1, prod2) {
+        if (typeof prod1 !== "object" || typeof prod2 !== "object") {
+          console.warn("Parameter passed was not an object");
+          return false;
+        }
+
+        if (prod1 == prod2) {
+          return true;
+        }
+        if (
+          prod1.company === prod2.company &&
+          prod1.Item === prod2.Item &&
+          prod1.price === prod2.price
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      let myntraProduct1 = {
+        company: "Myntra",
+        Item: "Top",
+        price: 800,
+        "delivery-time": "same day delivery",
+      };
+      let myntraProduct2 = {
         company: "Myntra",
         Item: "Jeans",
         price: 800,
+        "delivery-time": "same day delivery",
       };
+      let myntraProduct3 = {
+        company: "Myntra",
+        Item: "Jeans",
+        price: 800,
+        "delivery-time": "same day delivery",
+      };
+      console.log(isIdenticalProduct(myntraProduct1, ""));
+      console.log(isIdenticalProduct(myntraProduct1, myntraProduct1));
+      console.log(isIdenticalProduct(myntraProduct1, myntraProduct2));
+      console.log(isIdenticalProduct(myntraProduct3, myntraProduct2));
+      console.log(isIdenticalProduct(myntraProduct2, myntraProduct3));
     </script>
   </body>
 </html>
