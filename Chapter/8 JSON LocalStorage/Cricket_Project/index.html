@@ -38,16 +38,20 @@
       Stump
     </button>
 
+    <button>RESET</button>
+
     <script>
-      let score = {
+      let scoreStr = localStorage.getItem("Score");
+      let score = JSON.parse(scoreStr) || {
         win: 0,
         loss: 0,
         tie: 0,
-        displayScore: function () {
-          return `
+      };
+
+      score.displayScore = function () {
+        return `
           won:${score.win}, loss:${score.loss}, tie:${score.tie}
           `;
-        },
       };
 
       function generateComputerChoice() {
@@ -101,10 +105,10 @@
       }
 
       function showResults(userMove, computerMove, results) {
-        // console.log(score);
+        localStorage.setItem("Score", JSON.stringify(score));
         alert(
-          `You have Chosen ${userMove}. Computer Choice is ${computerMove} and 
-          
+          `You have Chosen ${userMove}. Computer Choice is ${computerMove} and
+
           ${results}
 
           ${score.displayScore()}`
