@@ -134,7 +134,9 @@
             ? `Computer Choice is ${computerMove}`
             : "";
 
-        document.querySelector("#result").innerText = results;
+        document.querySelector("#result").innerText =
+          results !== undefined ? results : "";
+
         document.querySelector("#score").innerText = score.displayScore();
       }
     </script>
