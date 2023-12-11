@@ -8,23 +8,24 @@
       #my-button {
         height: 50px;
         width: 50px;
-        border-radius: 20px;
+        border-radius: 10px;
         font-size: 25px;
+        border: none;
       }
       .odd {
         background-color: darkcyan;
-        color: brown;
+        color: rgb(228, 186, 127);
       }
       .even {
         background-color: olive;
-        color: burlywood;
+        color: black;
       }
     </style>
   </head>
   <body>
     <h3 id="greeting"></h3>
 
-    <button id="my-button" onclick="buttonPressed()">0</button>
+    <button id="my-button" onclick="buttonPressed()"></button>
     <script>
       // 1. Dispaly Good Morning , Afternoon and Night based on current hour.
       // 2. Add the name to the Output too.
@@ -49,13 +50,28 @@
       // 3. Create a button  which shows the  number how many times it has been pressed.
       // a. Also, it has different colors for when it has been pressed odd or even times.
       // b. The click count should also surive browser refresh.
-      let numberOfTimesClicked = 0;
+      let numberOfTimesClicked =
+        localStorage.getItem("numberOfTimesClicked") || 0;
 
       function buttonPressed() {
-        let button = document.querySelector("#my-button");
         numberOfTimesClicked++;
+        localStorage.setItem("numberOfTimesClicked", numberOfTimesClicked);
+        updateButton();
+      }
+
+      function updateButton() {
+        let button = document.querySelector("#my-button");
+
+        if (numberOfTimesClicked % 2 === 0) {
+          button.classList.remove("odd");
+          button.classList.add("even");
+        } else {
+          button.classList.remove("even");
+          button.classList.add("odd");
+        }
         button.innerText = numberOfTimesClicked;
       }
+      updateButton();
     </script>
   </body>
 </html>
