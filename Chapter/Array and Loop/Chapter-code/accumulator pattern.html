@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accumulator Pattern</title>
+  </head>
+  <body>
+    <script>
+      let arrayNums = [3, 6, 5, 8, 9, 7];
+      let sum = 0;
+      for (let i = 0; i < arrayNums.length; i++) {
+        sum = sum + arrayNums[i];
+      }
+      console.log(sum);
+
+      let square = [];
+      for (let i = 0; i < arrayNums.length; i++) {
+        square.push(arrayNums[i] * arrayNums[i]);
+      }
+      console.log(square);
+    </script>
+  </body>
+</html>
