@@ -92,16 +92,28 @@
 
       // 7. Using Continue Only Print positive numbers from the given array [1,-6,5,7,-98]
 
-      let array = [1, -6, 5, 7, -98];
-      for (let i = 0; i < array.length; i++) {
-        if (array[i] < 0) {
-          continue;
-        } else {
-          console.log(array[i]);
-        }
-      }
+      // let array = [1, -6, 5, 7, -98];
+      // for (let i = 0; i < array.length; i++) {
+      //   if (array[i] < 0) {
+      //     continue;
+      //   } else {
+      //     console.log(array[i]);
+      //   }
+      // }
 
-      // 8.
+      // 8. Using Accumulator Pattern concatenate all the strings in the
+      //    given array ['KG','Coding','JavaScript','Course','is','Best'].
+
+      let arr = ["KG", "Coding", "JavaScript", "Course", "is", "Best"];
+
+      let bag = "";
+
+      for (let i = 0; i < arr.length; i++) {
+        bag = bag + arr[i] + " ";
+      }
+      console.log(bag);
+
+      // console.log(arr.join(" "));
     </script>
   </body>
 </html>
