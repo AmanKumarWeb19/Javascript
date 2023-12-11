@@ -69,6 +69,8 @@
           won:${score.win}, loss:${score.loss}, tie:${score.tie}
           `;
         };
+
+        showResults();
       }
 
       function generateComputerChoice() {
@@ -123,13 +125,17 @@
 
       function showResults(userMove, computerMove, results) {
         localStorage.setItem("Score", JSON.stringify(score));
-        alert(
-          `You have Chosen ${userMove}. Computer Choice is ${computerMove} and
 
-          ${results}
+        document.querySelector("#user-move").innerText =
+          userMove !== undefined ? `You have Chosen ${userMove}` : "";
 
-          ${score.displayScore()}`
-        );
+        document.querySelector("#computer-move").innerText =
+          computerMove !== undefined
+            ? `Computer Choice is ${computerMove}`
+            : "";
+
+        document.querySelector("#result").innerText = results;
+        document.querySelector("#score").innerText = score.displayScore();
       }
     </script>
   </body>
