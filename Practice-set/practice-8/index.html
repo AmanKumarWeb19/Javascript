@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice -8</title>
+  </head>
+  <body>
+    <h3 id="greeting"></h3>
+    <script>
+      // 1. Dispaly Good Morning , Afternoon and Night based on current hour.
+      // 2. Add the name to the Output too.
+
+      function doGreeting(personName = "Dear") {
+        let date = new Date();
+        let hours = date.getHours();
+        let heading = document.querySelector("#greeting");
+
+        if (hours > 5 && hours < 12) {
+          heading.innerText = `Good Morning ${personName}`;
+        } else if (hours > 12 && hours < 18) {
+          heading.innerText = `Good AfterNoon ${personName}`;
+        } else {
+          heading.innerText = `Good Night ${personName}`;
+        }
+      }
+      doGreeting("Aman");
+
+      // .............................................................................................
+
+      // 3. Create a button  which shows the  number how many times it has been pressed.
+      // a. Also, it has different colors for when it has been pressed odd or even times.
+      // b. The click count should also surive browser refresh.
+
+      
+    </script>
+  </body>
+</html>
