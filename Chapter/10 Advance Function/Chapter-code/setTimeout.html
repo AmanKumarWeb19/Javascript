@@ -8,14 +8,20 @@
   <body>
     <script>
       //Set Timeout
+
       // setTimeout(() => {
       //   console.log("hi aman hw are you");
       // }, 2000);
       // console.log("greetings");
 
       let alarm = () => console.log("Subh hogyi mamu");
-      setTimeout(alarm, 2000);
-      console.log("hiii aman");
+      // let timerId = setTimeout(alarm, 2000);
+      // clearTimeout(timerId);
+
+      //Set Intervsal:-
+
+      let intervalId = setInterval(alarm, 1000);
+      setTimeout(()=>clearInterval(intervalId),5000)
     </script>
   </body>
 </html>
