@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice set 10</title>
+    <style>
+      .btn {
+        height: 35px;
+        width: 100px;
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+        padding: 10px 15px;
+        border: none;
+        font-size: 15px;
+      }
+      .js-size-double {
+        font-size: 30px;
+        height: 70px;
+        width: 200px;
+      }
+      .click-btn {
+        height: 35px;
+        width: 100px;
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+        padding: 10px 15px;
+        border: none;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <button
+      class="btn"
+      onclick="
+    setTimeout(doubleSize,2000)
+      "
+    >
+      Subscribe
+    </button> -->
+
+    <button class="click-btn">Click me</button>
+
+    <script>
+      // 1. Create a variable multiply and assign a function to this variable
+      // that multiples two numbers. Call this method from the variable.
+      let multiply = (num1, num2) => num1 * num2;
+      console.log(multiply(4, 5));
+
+      // 2. create a function runTwice that takes a function as a parameter and then
+      //   runs that method twice.
+      let printGreeting = () => console.log("Namsate");
+
+      let runTwice = (inputFunction) => {
+        inputFunction();
+        inputFunction();
+      };
+      runTwice(printGreeting);
+
+      // 3. Create a button which should grow double in size on click after 2 seconds.
+
+      // function doubleSize() {
+      //   let doubleElement = document.querySelector(".btn");
+      //   doubleElement.classList.add("js-size-double");
+      // }
+
+      // 4. In the above exercise add the behaviour suing an event listener instead of onclick.
+      let clickDoubleButton = document.querySelector(".click-btn");
+      clickDoubleButton.addEventListener("click", (event) =>
+        setTimeout(doubleSize, 2000)
+      );
+
+      function doubleSize() {
+        let doubleElement = document.querySelector(".click-btn");
+        doubleElement.classList.add("js-size-double");
+      }
+    </script>
+  </body>
+</html>
