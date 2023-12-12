@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addEventListener</title>
+  </head>
+  <body>
+    <button class="btn">Click me</button>
+    <script>
+      let button = document.querySelector(".btn");
+      let behaviour = (event) => console.log("I am clicked");
+      button.addEventListener("click", behaviour);
+    </script>
+  </body>
+</html>
