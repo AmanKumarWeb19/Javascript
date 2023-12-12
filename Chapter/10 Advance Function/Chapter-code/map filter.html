@@ -7,20 +7,34 @@
   </head>
   <body>
     <script>
-      let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-      let odd = arr.filter((num, index) => {
-        if (num % 2 === 1) {
-          return true;
-        } else {
-          return false;
-        }
-      });
-      // console.log(odd);
+      //FILTER PART :_________
+      // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      // let odd = arr.filter((num, index) => {
+      //   if (num % 2 === 1) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // });
+      // // console.log(odd);
 
-      let nweOdds = arr.filter((num, index) => {
-        return num % 2 === 1;
+      // let nweOdds = arr.filter((num, index) => {
+      //   return num % 2 === 1;
+      // });
+      // console.log("newodd :-" + " " + nweOdds);
+
+      // MAP PART :-
+      //1st Method
+      let arr = [1, 2, 3, 4, 5, 6];
+      let square = arr.map((num) => {
+        return num * num;
       });
-      console.log("newodd :-" + " " + nweOdds);
+      console.log(square);
+
+      //2nd Method;-
+
+      let sq = arr.map((num) => num * num);
+      console.log(sq);
     </script>
   </body>
 </html>
