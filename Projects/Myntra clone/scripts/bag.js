@@ -1,9 +1,56 @@
+const CONVENIENCE_FEE = 99;
+
 let bagItemObjects;
 onLoad();
 
 function onLoad() {
   loadBagItemsObjects();
   displayBagItems();
+  displayBagSummery();
+}
+
+function displayBagSummery() {
+  let bagSummeryElement = document.querySelector(".bag-summary");
+  let totalItem = bagItemObjects.length;
+  let totalMRP = 0;
+  let totalDiscount = 0;
+
+  bagItemObjects.forEach((bagItem) => {
+    totalMRP += bagItem.original_price;
+    totalDiscount +=
+      bagItem.original_price - bagItem.current_price + CONVENIENCE_FEE;
+  });
+
+  let finalPayment = totalMRP - totalDiscount;
+
+  bagSummeryElement.innerHTML = `
+  <div class="bag-details-container">
+  <div class="price-header">PRICE DETAILS (${totalItem} Items)</div>
+  <div class="price-item">
+    <span class="price-item-tag">Total MRP</span>
+    <span class="price-item-value"> ₹${totalMRP}</span>
+  </div>
+  <div class="price-item">
+    <span class="price-item-tag">Discount on MRP</span>
+    <span class="price-item-value priceDetail-base-discount"
+      >- ₹${totalDiscount}</span
+    >
+  </div>
+  <div class="price-item">
+    <span class="price-item-tag">Convenience Fee</span>
+    <span class="price-item-value"> ₹99</span>
+  </div>
+  <hr />
+  <div class="price-footer">
+    <span class="price-item-tag">Total Amount</span>
+    <span class="price-item-value"> ₹${finalPayment}</span>
+  </div>
+</div>
+<button class="btn-place-order">
+  <div class="css-xjhrni">PLACE ORDER</div>
+</button>
+
+`;
 }
 
 function loadBagItemsObjects() {
@@ -20,7 +67,20 @@ console.log(bagItemObjects);
 
 function displayBagItems() {
   let containerElement = document.querySelector(".bag-items-container");
-  // containerElement.innerHTML = ;
+  let innerHTML = "";
+  bagItemObjects.forEach((bagItem) => {
+    innerHTML += generateItemHtml(bagItem);
+  });
+  containerElement.innerHTML = innerHTML;
+}
+
+function removeFromBag(itemId) {
+  bagItems = bagItems.filter((bagItemId) => bagItemId != itemId);
+  localStorage.setItem("bagItems", JSON.stringify(bagItems));
+  loadBagItemsObjects();
+  displayBagIcon();
+  displayBagItems();
+  displayBagSummery();
 }
 
 function generateItemHtml(item) {
@@ -48,7 +108,7 @@ function generateItemHtml(item) {
     </div>
   </div>
 
-  <div class="remove-from-cart">X</div>
+  <div class="remove-from-cart" onclick='removeFromBag(${item.id})'>X</div>
 </div>
 `;
 }
