@@ -180,6 +180,26 @@ header {
   width: 100%;
 }
 
+.catergoryyy_heading {
+  /* width: 80%; */
+  text-align: center;
+  text-transform: uppercase;
+  color: #3e4152;
+  letter-spacing: 0.15em;
+  font-size: 1.8em;
+  max-height: 4em;
+  font-weight: 700;
+  margin: 50px 0px 0px 50px;
+}
+
+.catergoryyy_items {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
 .category_heading {
   text-transform: uppercase;
   color: #3e4152;
